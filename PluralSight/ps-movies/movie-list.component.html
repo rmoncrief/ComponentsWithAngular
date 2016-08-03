@@ -10,8 +10,7 @@
       <td>{{movie.title}}</td>
       <td>{{movie.length}}</td>
       <td>
-        <movie-rating value="movie.rating">
-          <span class="glyphicon glyphicon-star"></span>
+        <movie-rating value="movie.rating" max="5">
         </movie-rating> </td>
       <td>
 
@@ -22,9 +21,9 @@
             <span class="glyphicon glyphicon-minus"></span>
           </button>
 
-          <a ng-link="['Details',{id: movie.id}]" class="btn btn-default">
+          <button ng-click="model.goTo(movie.id)" class="btn btn-default">
             <span class="glyphicon glyphicon-zoom-in"></span>
-          </a>
+          </button>
       </td>
     </tr>
   </table>

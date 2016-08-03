@@ -19,6 +19,10 @@
       });
     };
 
+    model.goTo = function(id) {
+      model.$router.navigate(["Details",{id:id},"Overview"]);
+    };
+
     model.upRating = function(movie) {
       if (movie.rating < 5) {
         movie.rating += 1;
@@ -36,6 +40,9 @@
   module.component("movieList", {
     templateUrl: '/ps-movies/movie-list.component.html',
     controllerAs: "model",
-    controller: ["$http", controller]
+    controller: ["$http", controller],
+    bindings: {
+      "$router": "<"
+    }
   });
 }());
