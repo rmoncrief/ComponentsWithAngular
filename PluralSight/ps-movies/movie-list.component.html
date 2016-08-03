@@ -9,7 +9,10 @@
     <tr ng-repeat="movie in model.movies">
       <th>{{movie.title}}</th>
       <th>{{movie.length}}</th>
-      <th>{{movie.rating}}</th>
+      <th>
+        <movie-rating value="movie.rating">
+          <span class="glyphicon glyphicon-star"></span>
+        </movie-rating> </th>
       <th>
         <div class="btn-group">
           <button class="btn btn-group" ng-click="model.upRating(movie)">
