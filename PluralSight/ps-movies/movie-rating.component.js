@@ -18,10 +18,13 @@
     controllerAs: "model",
     bindings: {
       value: "<",
-      max: "<"
+      max: "<",
+      setRating: "&"
     },
     controller: function() {
       var model = this;
+
+      
 
       model.$onInit = function() {
         model.entries = buildEntries(model.value,model.max);
